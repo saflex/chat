@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="chat-in-area">
+        <div class="chat-in-header-panel">
+            <div class="chat-in-name-area">
+                <div class="chat-in-name-full">Александр Старшинов
+                    <span>last seen 3 hours ago</span>
+                </div>
+            </div>
+            <div class="chat-in-header-bottom">
+                <div class="chat-in-arrow-left">Chats</div>
+                <div class="chat-in-ava-area">
+                    <img src="img/missing_avatar_thumb.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="chat-in-content-panel wt-chat-im content light mCustomScrollbar">
+            <div class="chat-in-messenge-me">Да надо будет поговорить мне Александр дал добро
+                <div class="chat-in-check-time-area">
+                    <div class="time">7:26</div>
+                </div>
+            </div>
+            <div class="chat-in-messenge-my">Да или там возможно поработать нужно совместно, чтобы быстрее запустить новый мессенджер ок?
+                <div class="chat-in-check-time-area">
+                    <div class="check-area-2"></div>
+                    <div class="time">7:26</div>
+                </div>
+            </div>
+            <div class="chat-in-messenge-me">Да надо будет поговорить мне Александр дал добро
+                <div class="chat-in-check-time-area">
+                    <div class="time">7:26</div>
+                </div>
+            </div>
+            <div class="chat-in-w-100-date">
+                <div class="chat-in-date-cloud">September 12</div>
+            </div>
+            <div class="chat-in-messenge-me"> Лого увеличил и выровнял с тектом, по редактору это на этапе бек энд разработки
+                <div class="chat-in-check-time-area">
+                    <div class="time">7:26</div>
+                </div>
+            </div>
+            <div class="chat-in-messenge-my">Да или там возможно поработать нужно совместно, чтобы быстрее запустить новый мессенджер ок?
+                <div class="chat-in-check-time-area">
+                    <div class="check-area-1"></div>
+                    <div class="time">7:26</div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-in-footer-panel">
+            <form action="">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <div class="row-chat">
+                    <ul class="chat-in-white-panel-icons">
+                        <li>
+                            <div class="chat-container-icons chat-icon-n1"></div>
+                        </li>
+                        <li>
+                            <div class="chat-container-icons chat-icon-n2"></div>
+                        </li>
+                        <li>
+                            <div class="chat-container-icons chat-icon-n3"></div>
+                        </li>
+                        <li>
+                            <div class="chat-container-icons chat-icon-n4"></div>
+                        </li>
+                        <li>
+                            <div class="chat-container-icons chat-icon-n5"></div>
+                        </li>
+                        <li>
+                            <div class="chat-container-icons chat-icon-n6"></div>
+                        </li>
+                        <li class="send-wth">
+                            <div class="chat-submit">Отправить</div>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="jquery.mCustomScrollbar.concat.min.js"></script>
+    <script>
+    (function($) {
+        $(window).load(function() {
+
+            $("a[rel='load-content']").click(function(e) {
+                e.preventDefault();
+                var url = $(this).attr("href");
+                $.get(url, function(data) {
+
+                    $(".content .mCSB_container").append(data); //load new content inside .mCSB_container
+                    //scroll-to appended content 
+                    $(".content").mCustomScrollbar("scrollTo", "h2:last");
+                });
+            });
+
+            $(".content").delegate("a[href='top']", "click", function(e) {
+                e.preventDefault();
+                $(".content").mCustomScrollbar("scrollTo", $(this).attr("href"));
+            });
+
+        });
+    })(jQuery);
+    </script>
+    <!-- github -->
+    <a class="github" href="https://github.com/saflex/chat" target="_blank">
+        <i>Посмотреть другие страницы этого проекта и исходный код можно на <span>github</span></i>
+        <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true">
+            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+    </a>
+    <style type="text/css">
+    body .github {
+        font-family: 'arial';
+        position: fixed;
+        bottom: 0;
+        height: auto;
+        width: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        text-align: center;
+        font-size: 16px;
+        display: flex;
+        text-decoration: none;
+        padding: 15px;
+        align-items: center;
+        justify-content: center;
+        -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    z-index: 9998;
+    }
+
+    body .github i {
+        font-style: italic !important;
+        display: block !important;
+        color: #000 !important;
+        opacity: 0.65 !important;
+        transition: all 0.3s ease-in-out !important;
+    }
+
+
+
+    body .github i span {
+        font-weight: 900 !important;
+    }
+
+    body .github svg {
+        display: block !important;
+        margin-left: 10px !important;
+        opacity: 0.65 !important;
+        transition: all 0.3s ease-in-out !important;
+    }
+
+    body .github:hover i,
+    body .github:hover svg {
+        opacity: 1 !important;
+    }
+    body .github:hover svg{
+        transform: scale(1.1);
+    }
+    </style>
+    <script type="text/javascript">
+    const allLinks = document.querySelectorAll('a');
+    const github = document.querySelector('.github');
+    for (let elem of allLinks) {
+        if (elem !== github) {
+            elem.onclick = function(event) {
+                event.preventDefault();
+            }
+        }
+    }
+    </script>
+    <!-- github -->
+</body>
+
+</html>

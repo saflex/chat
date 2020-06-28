@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    html,
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+    }
+
+    .chat-in-area-form {
+        min-width: 260px;
+        width: 320px;
+        background: #F3F2F2;
+        z-index: 99;
+    }
+
+    .chat-in-im_dialog_message_wrap2 {
+        word-wrap: break-word;
+        height: 43px;
+        text-align: left;
+        border-bottom: 1px solid #cacaca;
+        margin-left: 52px;
+        padding-right: 10px;
+        padding-top: 2px;
+    }
+
+    .chat-in-im_dialog_message_wrap2 {
+        border-bottom: 0px solid #cacaca;
+    }
+
+    .chat-in-im_dialog_message_wrap2 {
+        border: 0;
+    }
+
+    .chat-in-area-form {
+        background: url(img/chat-bg.jpg) 0 0 no-repeat;
+        background-size: cover;
+    }
+
+    .chat-in-area-form {
+        position: absolute;
+    }
+
+    .button-lang {
+        border: 1px solid #eee;
+        border-radius: 5px;
+        width: 100%;
+        color: #3095E7;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+        margin-top: 20px;
+        padding-left: 40px;
+        position: relative;
+    }
+
+
+    .lang-area {
+        background: #fff;
+        padding: 10px;
+    }
+
+    .lng1 {
+        content: '';
+        position: relative;
+        display: inline-block;
+        width: 44px;
+        height: 31px;
+        left: 0;
+        background: url(http://saflex.ru/telegraf3/img/ru.png) 0 0 no-repeat;
+        vertical-align: bottom;
+        margin-right: 10px;
+    }
+
+
+    .lng2 {
+        content: '';
+        position: relative;
+        display: inline-block;
+        width: 44px;
+        height: 31px;
+        left: 0;
+        background: url(http://saflex.ru/telegraf3/img/us.png) 0 0 no-repeat;
+        vertical-align: bottom;
+        margin-right: 10px;
+        margin-left: -10px;
+    }
+
+    .button-lang span {
+        display: inline-block;
+        vertical-align: super;
+        font-size: 16px;
+    }
+
+    .button-lang {
+        cursor: pointer;
+    }
+
+
+
+    .chat-in-user_bgcolor_12 {
+        background: #cc90e2;
+    }
+
+
+
+    .button-lang:hover {
+        background-color: #eee;
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
+        -ms-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+    }
+
+    .title-bg {
+        background: #F8F6F9;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        text-align: center;
+        color: #3095E7;
+    }
+
+    .chat-form .chat-in-im_dialog_message_wrap {
+        border: 0;
+    }
+
+    .chat-in_dialog2 {
+        background: #fff;
+        padding-top: 4px;
+        padding-left: 10px;
+        overflow: hidden;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .pull-left2 {
+        float: left;
+    }
+
+    .garants2 {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 10px;
+        background: url(img/garant.png) 0 0 no-repeat;
+        margin-top: 6px;
+        background-size: contain;
+    }
+
+    .chat-form .chat-in_dialog {
+        border-bottom: 1px solid #eee;
+    }
+
+    .cards-ns {
+        background: #fff;
+        padding: 10px;
+    }
+
+    .cards-ns label {
+        display: block;
+        color: #3095E7;
+    }
+
+    .chat-in-im_dialog_message2 {
+        margin-top: 0;
+        font-size: 8.2pt;
+        font-weight: 400;
+        color: #808080;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .chat-in_dialog_person2 {
+        color: #222;
+        font-weight: 500;
+        margin-top: 0;
+        margin-bottom: 2px;
+        font-size: 14px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .chat-in_dialog_person2 {
+        color: #222;
+        font-weight: 500;
+        margin-top: 4px;
+        margin-bottom: 3px;
+        font-size: 17px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .chat-in-im_dialog_no_avatar2 {
+        margin-top: 0;
+        width: 39px;
+        height: 39px;
+        border-radius: 50%;
+        color: #fff;
+        line-height: 39px;
+        font-size: 18px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 400;
+        overflow: hidden;
+        margin-top: 6px;
+    }
+
+
+
+    .input-chat-area input {
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+        border: 1px solid #3095E7;
+        padding: 6px;
+        margin-top: 3px;
+        border-radius: 5px;
+    }
+
+    .input-chat-area {
+        margin-top: 10px;
+    }
+
+    .w50 .input-chat-area {
+        width: 50%;
+        float: left;
+    }
+
+    .w50 {
+        overflow: hidden;
+    }
+
+    .w50 .input-chat-area:first-child {
+        width: 48%;
+    }
+
+    .w50 .input-chat-area:last-child {
+        width: 48%;
+        float: right;
+    }
+
+    .input-chat-area label {
+        height: 20px;
+    }
+
+    .input-chat-area button {
+        width: 100%;
+        height: 27px;
+        margin-top: 3px;
+        border-radius: 4px;
+        background: #3095E7;
+        color: #fff;
+        border: 0;
+        text-transform: uppercase;
+    }
+
+    .input-chat-area button:hover {
+        background: #FC5620;
+    }
+
+
+
+    select.css-styled {
+        width: 100%;
+        height: 27px;
+        padding-left: 7px;
+        border-radius: 4px;
+        margin-top: 3px;
+        -webkit-appearance: none;
+        background-position: right center;
+        background-repeat: no-repeat;
+        border-color: #1A9CE0;
+        background: #fff;
+        line-height: 1em;
+        -moz-appearance: none;
+        text-indent: 0.01px;
+        text-overflow: '';
+        -ms-appearance: none;
+        appearance: none;
+        background: none;
+    }
+
+    select.css-styled::-ms-expand {
+        display: none;
+    }
+
+    .select-chat-area:before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 2px;
+        vertical-align: middle;
+        border-top: 4px dashed;
+        border-top: 4px solid \9;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+        margin-top: 35px;
+        right: 16px;
+        z-index: 0;
+    }
+    }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="jquery.mCustomScrollbar.css">
+    <script src="plugins/formstyler/jquery.formstyler.js"></script>
+    <link rel="stylesheet" href="plugins/formstyler/jquery.formstyler.css" />
+    <script>
+    (function($) {
+        $(function() {
+            $('select').styler({
+                selectSearch: true
+            });
+        });
+    })(jQuery);
+    </script>
+    <style>
+    .w50 {
+        overflow: visible;
+    }
+
+    .chat-in-area-form {
+        background: #fff;
+    }
+
+    .jq-selectbox__select {
+        width: 100%;
+        height: 28px;
+        padding: 0 20px 0 10px;
+        border: 1px solid #3095E7;
+        background: #fff;
+        font: 12px/32px "Arial", sans-serif;
+        color: #191919;
+        text-shadow: none;
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin-top: 2px;
+        line-height: 26px;
+    }
+
+    .jq-selectbox li:hover {
+        background-color: #3095E7;
+    }
+
+
+    .jq-selectbox__trigger-arrow {
+        top: 12px;
+    }
+
+    .jq-selectbox__dropdown {
+        box-sizing: border-box;
+        width: 100%;
+        margin: -1px 0 0;
+        padding: 0;
+        border: 1px solid #3095E7;
+        border-top: 1px solid #3095E7;
+        background: #FFF;
+        font: 12px/18px Arial, sans-serif;
+    }
+
+
+    .input-chat-area input {
+        height: 38px;
+    }
+
+    .jq-selectbox__select {
+        width: 100%;
+        height: 39px;
+        padding: 0 20px 0 10px;
+        border: 1px solid #3095E7;
+        background: #fff;
+        font: 12px/32px "Arial", sans-serif;
+        color: #191919;
+        text-shadow: none;
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin-top: 2px;
+        line-height: 26px;
+    }
+
+    .jq-selectbox__select {
+        width: 100%;
+        height: 39px;
+        padding: 0 20px 0 10px;
+        border: 1px solid #3095E7;
+        background: #fff;
+        font: 12px/32px "Arial", sans-serif;
+        color: #191919;
+        text-shadow: none;
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin-top: 2px;
+        line-height: 36px;
+    }
+
+    .jq-selectbox__trigger-arrow {
+        top: 16px;
+    }
+
+    .input-chat-area button {
+        width: 100%;
+        height: 38px;
+        margin-top: 3px;
+        border-radius: 4px;
+        background: #3095E7;
+        color: #fff;
+        border: 0;
+        text-transform: uppercase;
+    }
+
+    .garants2 {
+        margin-top: 11px;
+    }
+
+    .cards-ns {
+        padding-top: 94px;
+    }
+
+    .input-chat-area {
+        margin-top: 17px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="chat-in-area-form">
+        <div class="chat-in-content-panel wt-chat-im content light contasts-no-padding">
+            <div class="chat-in-contacts-area chat-form">
+                <div class="title-bg">Guarantee</div>
+                <div class="chat-in_dialog2">
+                    <div class="garants2"></div>
+                    <div class="chat-in_dialog_meta2 pull-right2 chat-in-text-right2"></div>
+                    <div class="im_dialog_photo2 pull-left2">
+                        <div class="chat-in-im_dialog_no_avatar2 chat-in-user_bgcolor_12">ia</div>
+                    </div>
+                    <div class="chat-in-im_dialog_message_wrap2">
+                        <div class="chat-in_dialog_person2">Alexey Ivanov</div>
+                        <div class="chat-in-im_dialog_message2"> test for task</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cards-ns">
+                <form>
+                    <div class="input-chat-area">
+                        <label>Card</label>
+                        <input class="chat-in" placeholder="Credit....">
+                    </div>
+                    <div class="w50">
+                        <div class="input-chat-area">
+                            <label>Amound (USD)</label>
+                            <input class="chat-in" placeholder="Credit....">
+                        </div>
+                        <div class="input-chat-area select-chat-area">
+                            <label>Persent (%)</label>
+                            <select class="css-styled">
+                                <option>Item 1</option>
+                                <option>Item 2</option>
+                                <option>Item 3</option>
+                                <option>Item 4</option>
+                                <option>Item 5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="w50">
+                        <div class="input-chat-area">
+                            <label>Time (days)</label>
+                            <input class="chat-in" placeholder="Credit....">
+                        </div>
+                        <div class="input-chat-area">
+                            <label></label>
+                            <button>Give Away</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="jquery.mCustomScrollbar.concat.min.js"></script>
+    <script>
+    (function($) {
+        $(window).load(function() {
+
+            $("a[rel='load-content']").click(function(e) {
+                e.preventDefault();
+                var url = $(this).attr("href");
+                $.get(url, function(data) {
+
+                    $(".content .mCSB_container").append(data); //load new content inside .mCSB_container
+                    //scroll-to appended content 
+                    $(".content").mCustomScrollbar("scrollTo", "h2:last");
+                });
+            });
+
+            $(".content").delegate("a[href='top']", "click", function(e) {
+                e.preventDefault();
+                $(".content").mCustomScrollbar("scrollTo", $(this).attr("href"));
+            });
+
+        });
+    })(jQuery);
+    </script>
+</body>
+
+</html>
